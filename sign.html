@@ -30,6 +30,7 @@
 		        </a>
 	        </div>
 	    </div>
+	    <div class="swiper-pagination" id="sign01"></div>
 	</div>
 	<div class="sign">
 		<img src="images/sign_in_icon@2x.png" alt="">
@@ -168,6 +169,7 @@
 		        </a>
 	        </div>
 	    </div>
+	    <div class="swiper-pagination swiper-p2" id="sign02"></div>
 	</div>
 	<div class="list">
 		<h2>
@@ -222,7 +224,7 @@
   })
   var mySwiper1 = new Swiper ('.swiper-container1', {
     autoplay:2000,
-    pagination: '.swiper-pagination1',
+    pagination: '.swiper-p2',
   })	  		
 	$(function(){
 		$('.list01 li').each(function(){
@@ -246,23 +248,19 @@
 				month = myDate.getMonth(),
 				day = myDate.getDate(),
 				weekText = ['日', '一', '二', '三', '四', '五', '六'];
-			_self/*.css({
-				width: this.obj.width + 'px',
-				height: this.obj.height,
-				background: this.obj.background,
-				borderRadius: this.obj.radius,
-				color: this.obj.color,
-				padding: this.obj.padding
-			})*/.append("<div class='title'>" + year + '年' + (month + 1) + '月' + day + '日' + "</div>");
+			_self.append("<div class='title'>" + year + '年' + (month + 1) + '月' + day + '日' + "</div>");
 			$("<ul class='week'></ul><ul class='calendarList clearfix'></ul>").appendTo(_self);
 			for (var i = 0; i < 7; i++) {
 				_self.find(".week").append("<li>" + weekText[i] + "</li>")
 			};
-			for (var i = 0; i < 42; i++) {
+			for (var i = 0; i <35; i++) {
 				html += "<li></li>"
 			};
 			_self.find(".calendarList").append(html);
 			var $li = _self.find(".calendarList").find("li");
+			$('.calendarList').css({
+				borderLeft: '1px solid #d0d0d0'
+			})
 			$li.css({
 				borderRight: '1px solid #d0d0d0',
 				borderBottom: '1px solid #d0d0d0',
